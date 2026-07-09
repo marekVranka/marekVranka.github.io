@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marek Vranka | Research Website</title>
+<meta name="description" content="Marek Vranka — social psychology &amp; behavioral science, Charles University Prague. Moral psychology, (dis)honesty, security attitudes, open science.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+ --bg:#0d1117; --panel:#161b22; --panel2:#1c2128; --border:#30363d;
+ --text:#e6edf3; --muted:#8b949e; --dim:#6e7681;
+ --purple:#c9a0dc; --green:#7ee787; --blue:#79c0ff; --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(22,27,34,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-in{max-width:1060px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:20px}
+.brand{font-weight:700;letter-spacing:.2px;font-size:17px;color:var(--text)}
+.brand span{color:var(--purple)}
+.nav-links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.nav-links button{background:none;border:0;color:var(--muted);font:inherit;font-weight:600;padding:8px 14px;border-radius:9px;cursor:pointer;font-size:14.5px}
+.nav-links button:hover{color:var(--text);background:var(--panel2)}
+.nav-links button.active{color:var(--bg);background:var(--purple)}
+.page{display:none;padding:38px 0 80px;animation:fade .4s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.hero{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap}
+.avatar{width:132px;height:132px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--purple),var(--blue));display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;color:#0d1117;border:1px solid var(--border)}
+.hero-body{flex:1;min-width:300px}
+h1{font-size:30px;margin:0 0 4px;letter-spacing:-.4px}
+.subtitle{color:var(--purple);font-weight:600;margin:0 0 14px}
+.affil{color:var(--muted);font-size:14.5px;margin-bottom:16px}
+.socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.socials a{display:inline-flex;align-items:center;gap:7px;background:var(--panel2);border:1px solid var(--border);padding:7px 13px;border-radius:9px;color:var(--text);font-size:13.5px;font-weight:600}
+.socials a:hover{border-color:var(--purple);text-decoration:none}
+h2.sec{font-size:20px;margin:44px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+h2.sec::before{content:"";width:4px;height:20px;background:var(--purple);border-radius:3px}
+.about p{color:#c9d1d9;margin:0 0 14px}
+.news{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.news li{display:flex;gap:14px;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:13px 16px}
+.news .yr{color:var(--green);font-weight:700;font-size:13px;flex:none;width:44px;padding-top:1px}
+.news .tx{color:#c9d1d9;font-size:14.5px}
+.dash{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 8px}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center}
+.stat .n{font-size:30px;font-weight:800;color:var(--purple);letter-spacing:-.5px}
+.stat .l{color:var(--muted);font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.stat .src{color:var(--dim);font-size:11px;margin-top:2px}
+.pub{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:15px 17px;margin-bottom:12px;transition:border-color .15s}
+.pub:hover{border-color:#484f58}
+.pub.hl{border-left:3px solid var(--green)}
+.pub .yr-badge{color:var(--dim);font-weight:700;font-size:13px}
+.pub h3{margin:3px 0 5px;font-size:16px;line-height:1.35;font-weight:650;color:var(--text)}
+.pub .auth{color:var(--muted);font-size:13.5px;margin-bottom:4px}
+.pub .auth b{color:#c9d1d9}
+.pub .jr{color:var(--blue);font-style:italic;font-size:13.5px}
+.pub .tags{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;border:1px solid transparent}
+.tag.t{color:var(--purple);background:rgba(201,160,220,.12);border-color:rgba(201,160,220,.3)}
+.tag.m{color:var(--green);background:rgba(126,231,135,.1);border-color:rgba(126,231,135,.28)}
+.tag.star{color:var(--green);background:rgba(126,231,135,.12);border-color:rgba(126,231,135,.3)}
+.controls{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:22px}
+#searchInput{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);padding:11px 14px;font:inherit;font-size:14.5px;margin-bottom:14px}
+#searchInput:focus{outline:none;border-color:var(--purple)}
+.fgroup{margin-bottom:11px}
+.fgroup .flabel{color:var(--dim);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chip{background:var(--panel2);border:1px solid var(--border);color:var(--muted);font:inherit;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:20px;cursor:pointer}
+.chip:hover{color:var(--text)}
+.chip.on{color:var(--bg);background:var(--purple);border-color:var(--purple)}
+.chip.on.mm{background:var(--green);border-color:var(--green)}
+.rowflex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.count{color:var(--muted);font-size:13.5px}
+.count b{color:var(--purple)}
+#sortOrder{background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:9px;padding:7px 11px;font:inherit;font-size:13px}
+.cv-grid{display:grid;gap:8px}
+.cv-item{display:flex;gap:16px;background:var(--panel);border:1px solid var(--border);border-radius:11px;padding:13px 16px}
+.cv-item .when{color:var(--green);font-weight:700;font-size:13px;flex:none;width:96px}
+.cv-item .what{font-size:14.5px}
+.cv-item .what .t1{font-weight:650}
+.cv-item .what .t2{color:var(--muted);font-size:13.5px}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap}
+.pill{background:var(--panel2);border:1px solid var(--border);border-radius:20px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--purple)}
+.foot{color:var(--dim);font-size:13px;text-align:center;padding:34px 0 10px;border-top:1px solid var(--border);margin-top:50px}
+@media(max-width:720px){.dash{grid-template-columns:repeat(2,1fr)}h1{font-size:25px}.cv-item .when{width:70px}}
+</style>
+</head>
+<body>
+<header class="nav">
+ <div class="nav-in">
+  <div class="brand">Marek <span>Vranka</span></div>
+  <nav class="nav-links">
+   <button data-p="home" class="active">Home</button>
+   <button data-p="research">Research</button>
+   <button data-p="vita">Vita</button>
+   <button data-p="contact">Contact</button>
+  </nav>
+ </div>
+</header>
+
+<main id="home" class="page on"><div class="wrap">
+ <div class="hero">
+  <div class="avatar">MV</div>
+  <div class="hero-body">
+   <h1>Marek Vranka</h1>
+   <div class="subtitle">Researcher in Social Psychology &amp; Behavioral Science</div>
+   <div class="affil">Faculty of Social Sciences, Charles University · Peace Research Center Prague · ERC MICROCODE</div>
+   <div class="socials"><a href="https://fsv.cuni.cz/contacts/people/32329117" target="_blank" rel="noopener">◈ Charles University</a><a href="https://scholar.google.com/" target="_blank" rel="noopener">▲ Google Scholar</a><a href="https://orcid.org/0000-0003-3413-9062" target="_blank" rel="noopener">iD ORCID</a><a href="https://osf.io/" target="_blank" rel="noopener">○ OSF</a><a href="mailto:32329117@fsv.cuni.cz" target="_blank" rel="noopener">✉ Email</a></div>
+  </div>
+ </div>
+ <h2 class="sec">About Me</h2>
+ <div class="about"><p>I am a researcher and lecturer in <strong>social psychology and behavioral science</strong> at Charles University in Prague, based at the Faculty of Social Sciences (Institute of Communication Studies and Journalism) and the Peace Research Center Prague. I also collaborate on the ERC-funded <em>MICROCODE</em> project.</p><p>My research lies at the intersection of <strong>moral psychology, behavioral economics, and experimental methodology</strong>. I study how people make moral and (dis)honest decisions, how the public forms attitudes toward high-stakes security questions such as nuclear and autonomous weapons, and how psychological science can be made more replicable and credible.</p><p>I care deeply about <strong>open and reproducible science</strong>. Much of my work is preregistered, multi-lab, and cross-national — including large collaborations such as Many Labs, the Psychological Science Accelerator, and global tournaments on climate and health behavior published in <em>Nature</em>, <em>Nature Human Behaviour</em>, <em>Science Advances</em>, and <em>PNAS</em>.</p></div>
+ <h2 class="sec">Research News</h2>
+ <ul class="news"><li><span class="yr">2026</span><span class="tx">Organizing the <em>Metascience of Behavior Change</em> (BRAINSTORM) meeting of international experts in Prague (Sep 28–29, 2026).</span></li><li><span class="yr">2026</span><span class="tx">New cross-national work on allied commitments, arms control, and autonomous weapons in <em>EJIR</em>, <em>ISQ</em>, and <em>Research &amp; Politics</em> (ERC MICROCODE).</span></li><li><span class="yr">2025</span><span class="tx">Completed my PhD in Social Psychology at the Faculty of Arts, Charles University.</span></li><li><span class="yr">2025</span><span class="tx">Joined the International Society for Moral Psychology and the Society for the Improvement of Psychological Science.</span></li><li><span class="yr">2024</span><span class="tx">“Moral hypocrisy and the dichotomy of hypothetical versus real choices” published in the <em>Journal of Economic Psychology</em>.</span></li></ul>
+ <h2 class="sec">Selected Publications</h2>
+ <div class="pub hl"><div class="yr-badge">2024</div><h3>A synthesis of evidence for policy from behavioural science during COVID-19</h3><div class="auth">Ruggeri, K., Stock, F., … <b>Vranka, M.</b>, … & Willer, R.</div><div class="jr">Nature</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Health & COVID-19</span><span class="tag m">Meta-analysis</span></div></div><div class="pub hl"><div class="yr-badge">2022</div><h3>The globalizability of temporal discounting</h3><div class="auth">Ruggeri, K., Panin, A., … <b>Vranka, M.</b>, … & Toscano, F.</div><div class="jr">Nature Human Behaviour</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Judgment & Decision-Making</span><span class="tag m">Cross-national</span><span class="tag m">Survey</span></div></div><div class="pub hl"><div class="yr-badge">2022</div><h3>A global experiment on motivating social distancing during the COVID-19 pandemic</h3><div class="auth">Legate, N., Nguyen, T. V., … <b>Vranka, M.</b>, … & Ogbonnaya, C. E.</div><div class="jr">PNAS</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Health & COVID-19</span><span class="tag m">Experiment</span><span class="tag m">Cross-national</span></div></div><div class="pub hl"><div class="yr-badge">2024</div><h3>Addressing climate change with behavioral science: A global intervention tournament in 63 countries</h3><div class="auth">Vlasceanu, M., Doell, K. C., … <b>Vranka, M.</b>, … & Lutz, A. E.</div><div class="jr">Science Advances</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Climate Change</span><span class="tag m">Experiment</span><span class="tag m">Cross-national</span></div></div><div class="pub hl"><div class="yr-badge">2024</div><h3>Effectiveness of ex ante honesty oaths in reducing dishonesty depends on content</h3><div class="auth">Zickfeld, J. H., Ścigała, K. A., … <b>Vranka, M.</b>, … & Mitkidis, P.</div><div class="jr">Nature Human Behaviour</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Dishonesty & Ethics</span><span class="tag m">Experiment</span><span class="tag m">Multi-lab / RRR</span></div></div><div class="pub hl"><div class="yr-badge">2022</div><h3>Situational factors shape moral judgements in the trolley dilemma in Eastern, Southern and Western countries in a culturally diverse sample</h3><div class="auth">Bago, B., Kovacs, M., … <b>Vranka, M.</b>, … & Matibag, C. J.</div><div class="jr">Nature Human Behaviour</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Moral Psychology</span><span class="tag m">Experiment</span><span class="tag m">Cross-national</span><span class="tag m">Multi-lab / RRR</span></div></div>
+ <p style="color:var(--muted);font-size:14px;margin-top:14px">See the <a href="#" data-goto="research">Research</a> page for the full, searchable list of publications with topic and method filters.</p>
+</div></main>
+
+<main id="research" class="page"><div class="wrap">
+ <h1>Research</h1>
+ <p style="color:var(--muted);max-width:720px">Preregistered, multi-lab, and cross-national work on moral judgment, (dis)honest behavior, public attitudes toward security, and the credibility of psychological science. Filter the full record below.</p>
+ <div class="dash">
+  <div class="stat"><div class="n">60</div><div class="l">Publications</div></div>
+  <div class="stat"><div class="n">2,795</div><div class="l">Citations</div><div class="src">Web of Science</div></div>
+  <div class="stat"><div class="n">26</div><div class="l">h-index</div><div class="src">Google Scholar</div></div>
+  <div class="stat"><div class="n">10</div><div class="l">First-author</div></div>
+ </div>
+ <div class="controls">
+  <input id="searchInput" type="text" placeholder="Search titles, authors, journals…">
+  <div class="fgroup"><div class="flabel">Topic</div><div class="chips" id="topicFilters"></div></div>
+  <div class="fgroup"><div class="flabel">Method</div><div class="chips" id="methodFilters"></div></div>
+ </div>
+ <div class="rowflex">
+  <div class="count"><b id="pcount">0</b> publications</div>
+  <select id="sortOrder"><option value="new">Newest first</option><option value="old">Oldest first</option></select>
+ </div>
+ <div id="papers"></div>
+</div></main>
+
+<main id="vita" class="page"><div class="wrap">
+ <h1>Vita</h1>
+ <h2 class="sec">Education</h2><div class="cv-grid"><div class="cv-item"><div class="when">2025</div><div class="what"><div class="t1">PhD, Social Psychology</div><div class="t2">Faculty of Arts, Dept. of Psychology, Charles University — Supervisors: Prof. Lenka Šulová & Doc. Ilona Gillernová; Mentor: Dr. Petr Boschek</div></div></div><div class="cv-item"><div class="when">2014</div><div class="what"><div class="t1">MSc, Corporate Economics & Management</div><div class="t2">Faculty of Business Administration, Prague University of Economics and Business (Minor: Behavioral Economics)</div></div></div><div class="cv-item"><div class="when">2012</div><div class="what"><div class="t1">MA, Psychology</div><div class="t2">Faculty of Arts, Dept. of Psychology, Charles University</div></div></div></div>
+ <h2 class="sec">Positions</h2><div class="cv-grid"><div class="cv-item"><div class="when">2016 –</div><div class="what"><div class="t1">Researcher & Lecturer</div><div class="t2">Faculty of Social Sciences, Dept. of Marketing Communication & PR, Charles University</div></div></div><div class="cv-item"><div class="when">2018 –</div><div class="what"><div class="t1">Researcher</div><div class="t2">Peace Research Center Prague, Faculty of Social Sciences, Charles University</div></div></div><div class="cv-item"><div class="when">2017 – 2024</div><div class="what"><div class="t1">Researcher; Head of CEVYZ Lab (2020–2024)</div><div class="t2">Faculty of Business Administration, Prague University of Economics and Business</div></div></div><div class="cv-item"><div class="when">2018 – 2021</div><div class="what"><div class="t1">Deputy Head of Department</div><div class="t2">Faculty of Social Sciences, Dept. of Marketing Communications & PR, Charles University</div></div></div><div class="cv-item"><div class="when">2016 – 2019</div><div class="what"><div class="t1">Researcher</div><div class="t2">National Institute of Mental Health, Klecany</div></div></div><div class="cv-item"><div class="when">2012 – 2020</div><div class="what"><div class="t1">Lecturer</div><div class="t2">Faculty of Arts, Dept. of Psychology, Charles University</div></div></div></div>
+ <h2 class="sec">Teaching</h2><div class="pill-row"><span class="pill">Social Psychology</span><span class="pill">Methodology</span><span class="pill">Statistics</span><span class="pill">Moral Psychology</span><span class="pill">Well-being</span><span class="pill">Behavioral Economics</span><span class="pill">Open Science</span><span class="pill">Experimental Psychology</span></div>
+ <p style="color:var(--muted);font-size:13.5px;margin-top:12px">Supervision: 50+ bachelor and 25+ master students (Charles University).</p>
+ <h2 class="sec">Service &amp; Organization</h2><div class="cv-grid"><div class="cv-item"><div class="when">2026</div><div class="what"><div class="t1">Organizer, <em>Metascience of Behavior Change</em> (BRAINSTORM) expert meeting, Prague</div></div></div><div class="cv-item"><div class="when">2020</div><div class="what"><div class="t1">Chair, Methodology in Psychology Working Group, 32nd International Congress of Psychology, Prague</div></div></div><div class="cv-item"><div class="when">2022 –</div><div class="what"><div class="t1">Reviewer, Grant Agency of Charles University</div></div></div><div class="cv-item"><div class="when">2019 –</div><div class="what"><div class="t1">Reviewer, Technology Agency of the Czech Republic</div></div></div><div class="cv-item"><div class="when">2013 –</div><div class="what"><div class="t1">Journal reviewer (Royal Society Open Science, JBDM, Applied Economics, JBEE, Czechoslovak Psychology, …)</div></div></div><div class="cv-item"><div class="when">2022 – 2024</div><div class="what"><div class="t1">Member, Harvard Belfer Center — Beyond Nuclear Deterrence Working Group</div></div></div></div>
+ <h2 class="sec">Memberships</h2><div class="cv-grid"><div class="cv-item"><div class="when">2026 –</div><div class="what"><div class="t1">International Society for Moral Psychology</div></div></div><div class="cv-item"><div class="when">2025 –</div><div class="what"><div class="t1">Society for the Improvement of Psychological Science</div></div></div><div class="cv-item"><div class="when">2017 –</div><div class="what"><div class="t1">Psychological Science Accelerator Network</div></div></div><div class="cv-item"><div class="when">2016 –</div><div class="what"><div class="t1">Society for Judgment and Decision Making</div></div></div></div>
+</div></main>
+
+<main id="contact" class="page"><div class="wrap">
+ <h1>Contact</h1>
+ <div class="about" style="max-width:640px">
+  <p>Marek Vranka<br>Institute of Communication Studies and Journalism<br>Faculty of Social Sciences, Charles University<br>Smetanovo nábřeží 6, 110 01 Prague, Czech Republic</p>
+  <p>Email: <a href="mailto:32329117@fsv.cuni.cz">32329117@fsv.cuni.cz</a></p>
+ </div>
+ <div class="socials" style="margin-top:18px"><a href="https://fsv.cuni.cz/contacts/people/32329117" target="_blank" rel="noopener">◈ Charles University</a><a href="https://scholar.google.com/" target="_blank" rel="noopener">▲ Google Scholar</a><a href="https://orcid.org/0000-0003-3413-9062" target="_blank" rel="noopener">iD ORCID</a><a href="https://osf.io/" target="_blank" rel="noopener">○ OSF</a><a href="mailto:32329117@fsv.cuni.cz" target="_blank" rel="noopener">✉ Email</a></div>
+</div></main>
+
+<div class="wrap"><div class="foot">© <span id="yr"></span> Marek Vranka · Single static page hosted on GitHub Pages.</div></div>
+
+<script>
+const PUBS=[{"y": 2026, "a": "Houdek, P., Bahník, Š., Vranka, M., & Zielina, M.", "t2": "How to React in the Case of Powerful Transgressors: Kill Them With Kindness or Punishment?", "j": "European Journal of Social Psychology", "t": ["moral", "social"], "m": ["experiment"], "id": 0, "hl": 0}, {"y": 2026, "a": "Smetana, M., Vranka, M., & Rosendorf, O.", "t2": "Allied commitments and public support for military interventions: A cross-national experiment", "j": "Research & Politics", "t": ["security"], "m": ["experiment", "crossnational", "survey"], "osf": "https://osf.io/j2hfb/overview", "id": 1, "hl": 0}, {"y": 2026, "a": "Rosendorf, O., Smetana, M., Vranka, M., & Dahlmann, A.", "t2": "Mind over metal: public opinion on autonomous weapons in the United States, Brazil, Germany, and China", "j": "International Studies Quarterly", "t": ["security"], "m": ["survey", "crossnational"], "id": 2, "hl": 0}, {"y": 2026, "a": "Smetana, M., Vranka, M., & Rosendorf, O.", "t2": "Public support for arms control in the third nuclear age: Cross-national survey and elite cues experiment in NATO countries", "j": "European Journal of International Relations", "t": ["security"], "m": ["survey", "experiment", "crossnational"], "id": 3, "hl": 0}, {"y": 2025, "a": "Knöchel, T. D., Schweizer, K. J., … Vranka, M., … & Aczel, B.", "t2": "Core principles of responsible generative AI usage in research", "j": "AI and Ethics", "t": ["openscience"], "m": [], "id": 4, "hl": 0}, {"y": 2025, "a": "Bahník, Š., & Vranka, M.", "t2": "Reward Perception, But Not Reward Inequality Is Associated With Increased Dishonesty", "j": "Social Psychology", "t": ["honesty"], "m": ["experiment"], "id": 5, "hl": 0}, {"y": 2025, "a": "Smetana, M., Sukin, L., Herzog, S., & Vranka, M.", "t2": "Atomic responsiveness: How public opinion shapes elite beliefs and preferences on nuclear weapon use", "j": "European Journal of International Security", "t": ["security"], "m": ["survey", "experiment"], "id": 6, "hl": 0}, {"y": 2025, "a": "Kalhousová, I., Komasová, S., Plíštilová, T., Smetana, M., & Vranka, M.", "t2": "Elite-public gaps in attitudes towards Israel and the Israeli-Palestinian conflict: new evidence from a survey of Czech parliamentarians and citizens", "j": "East European Politics", "t": ["security"], "m": ["survey"], "id": 7, "hl": 0}, {"y": 2024, "a": "Zickfeld, J. H., Ścigała, K. A., … Vranka, M., … & Mitkidis, P.", "t2": "Effectiveness of ex ante honesty oaths in reducing dishonesty depends on content", "j": "Nature Human Behaviour", "t": ["honesty"], "m": ["experiment", "multilab"], "hl": 1, "id": 8}, {"y": 2024, "a": "Vranka, M., & Houdek, P.", "t2": "Moral hypocrisy and the dichotomy of hypothetical versus real choices in prosocial behavior", "j": "Journal of Economic Psychology", "t": ["moral", "honesty"], "m": ["experiment"], "id": 9, "hl": 0}, {"y": 2024, "a": "Doell, K. C., Todorova, B., … Vranka, M., … & Lutz, A. E.", "t2": "The International Climate Psychology Collaboration: Climate change-related data collected from 63 countries", "j": "Scientific Data", "t": ["climate"], "m": ["crossnational", "survey"], "id": 10, "hl": 0}, {"y": 2024, "a": "Smetana, M., Vranka, M., & Rosendorf, O.", "t2": "Elite-public gaps in support for nuclear and chemical strikes: New evidence from a survey of British parliamentarians and citizens", "j": "Research & Politics", "t": ["security"], "m": ["survey"], "id": 11, "hl": 0}, {"y": 2024, "a": "Smetana, M., Vranka, M., & Rosendorf, O.", "t2": "The “Commitment Trap” Revisited: Experimental Evidence on Ambiguous Nuclear Threats", "j": "Journal of Experimental Political Science", "t": ["security"], "m": ["experiment", "survey"], "id": 12, "hl": 0}, {"y": 2024, "a": "Vlasceanu, M., Doell, K. C., … Vranka, M., … & Lutz, A. E.", "t2": "Addressing climate change with behavioral science: A global intervention tournament in 63 countries", "j": "Science Advances", "t": ["climate"], "m": ["experiment", "crossnational"], "hl": 1, "id": 13}, {"y": 2024, "a": "Ruggeri, K., Stock, F., … Vranka, M., … & Willer, R.", "t2": "A synthesis of evidence for policy from behavioural science during COVID-19", "j": "Nature", "t": ["health"], "m": ["meta"], "hl": 1, "id": 14}, {"y": 2024, "a": "Efendić, E., Van de Calseyde, P. P., Bahník, Š., & Vranka, M. A.", "t2": "Taking algorithmic (vs. human) advice reveals different goals to others", "j": "International Journal of Human–Computer Interaction", "t": ["jdm"], "m": ["experiment"], "id": 15, "hl": 0}, {"y": 2024, "a": "Rosendorf, O., Smetana, M., & Vranka, M.", "t2": "Algorithmic Aversion? Experimental Evidence on the Elasticity of Public Attitudes to “Killer Robots”", "j": "Security Studies", "t": ["security", "jdm"], "m": ["experiment", "survey"], "id": 16, "hl": 0}, {"y": 2023, "a": "Bahník, Š., & Vranka, M.", "t2": "How does probabilistic harm affect dishonesty? An experiment", "j": "Finance Research Letters", "t": ["honesty"], "m": ["experiment"], "id": 17, "hl": 0}, {"y": 2023, "a": "Buchanan, E. M., Lewis, S. C., … Vranka, M., … & Vega, D.", "t2": "The Psychological Science Accelerator's COVID-19 rapid-response dataset", "j": "Scientific Data", "t": ["health", "openscience"], "m": ["multilab", "crossnational"], "id": 18, "hl": 0}, {"y": 2023, "a": "Pittelkow, M. M., Field, S. M., … Vranka, M., … & Van Ravenzwaaij, D.", "t2": "The process of replication target selection in psychology: what to consider?", "j": "Royal Society Open Science", "t": ["openscience"], "m": [], "id": 19, "hl": 0}, {"y": 2023, "a": "Smetana, M., Vranka, M., & Rosendorf, O.", "t2": "The lesser evil? Experimental evidence on the strength of nuclear and chemical weapon “taboos”", "j": "Conflict Management and Peace Science", "t": ["security"], "m": ["experiment", "survey"], "id": 20, "hl": 0}, {"y": 2022, "a": "Věchetová, G., Nikolai, T., … Vranka, M., … & Serranová, T.", "t2": "Attention impairment in motor functional neurological disorders: a neuropsychological study", "j": "Journal of Neurology", "t": ["health"], "m": [], "id": 21, "hl": 0}, {"y": 2022, "a": "Dorison, C. A., Lerner, J. S., … Vranka, M., … & Pantazi, M.", "t2": "In COVID-19 health messaging, loss framing increases anxiety with little-to-no concomitant benefits: experimental evidence from 84 countries", "j": "Affective Science", "t": ["health"], "m": ["experiment", "crossnational"], "id": 22, "hl": 0}, {"y": 2022, "a": "Bahník, Š., & Vranka, M.", "t2": "No evidence of moral licensing in a laboratory bribe-taking task", "j": "Scientific Reports", "t": ["honesty", "moral"], "m": ["experiment"], "id": 23, "hl": 0}, {"y": 2022, "a": "Ruggeri, K., Panin, A., … Vranka, M., … & Toscano, F.", "t2": "The globalizability of temporal discounting", "j": "Nature Human Behaviour", "t": ["jdm"], "m": ["crossnational", "survey"], "hl": 1, "id": 24}, {"y": 2022, "a": "Legate, N., Nguyen, T. V., … Vranka, M., … & Ogbonnaya, C. E.", "t2": "A global experiment on motivating social distancing during the COVID-19 pandemic", "j": "PNAS", "t": ["health"], "m": ["experiment", "crossnational"], "hl": 1, "id": 25}, {"y": 2022, "a": "Bago, B., Kovacs, M., … Vranka, M., … & Matibag, C. J.", "t2": "Situational factors shape moral judgements in the trolley dilemma in Eastern, Southern and Western countries in a culturally diverse sample", "j": "Nature Human Behaviour", "t": ["moral"], "m": ["experiment", "crossnational", "multilab"], "hl": 1, "id": 26}, {"y": 2022, "a": "Bahník, Š., & Vranka, M. A.", "t2": "Experimental test of the effects of punishment probability and size on the decision to take a bribe", "j": "Journal of Behavioral and Experimental Economics", "t": ["honesty"], "m": ["experiment"], "id": 27, "hl": 0}, {"y": 2022, "a": "Rosendorf, O., Smetana, M., & Vranka, M.", "t2": "Autonomous weapons and ethical judgments: Experimental evidence on attitudes toward the military use of “killer robots”", "j": "Peace and Conflict: Journal of Peace Psychology", "t": ["security", "moral"], "m": ["experiment", "survey"], "id": 28, "hl": 0}, {"y": 2021, "a": "Isager, P. M., Van Aert, R., … Vranka, M., … & Lakens, D.", "t2": "Deciding what to replicate: A decision model for replication study selection under resource and knowledge constraints", "j": "Psychological Methods", "t": ["openscience"], "m": [], "id": 29, "hl": 0}, {"y": 2021, "a": "Rosendorf, O., Smetana, M., & Vranka, M.", "t2": "Disarming Arguments: Public Opinion and Nuclear Abolition", "j": "Survival", "t": ["security"], "m": ["survey"], "id": 30, "hl": 0}, {"y": 2021, "a": "Wang, K., Goldenberg, A., … Vranka, M., … & Isager, P. M.", "t2": "A multi-country test of brief reappraisal interventions on emotions during the COVID-19 pandemic", "j": "Nature Human Behaviour", "t": ["health"], "m": ["experiment", "crossnational", "multilab"], "hl": 1, "id": 31}, {"y": 2021, "a": "Frollová, N., Vranka, M., & Houdek, P.", "t2": "A qualitative study of perception of a dishonesty experiment", "j": "Journal of Economic Methodology", "t": ["honesty"], "m": [], "id": 32, "hl": 0}, {"y": 2021, "a": "Houdek, P., Koblovský, P., & Vranka, M.", "t2": "The Challenge of Human Psychology to Effective Management of the COVID-19 Pandemic", "j": "Society", "t": ["health"], "m": [], "id": 33, "hl": 0}, {"y": 2021, "a": "Ruggeri, K., Većkalov, B., … Vranka, M., … & Folke, T.", "t2": "The general fault in our fault lines", "j": "Nature Human Behaviour", "t": ["jdm", "social"], "m": ["crossnational", "survey"], "hl": 1, "id": 34}, {"y": 2021, "a": "Vranka, M. A., Hudik, M., Frollova, N., Bahník, Š., Sýkorová, M., & Houdek, P.", "t2": "Honesty of Online Workers: A Field Experiment shows no Evidence of Self-Selection of Cheaters to a Cheating-enabling Work Environment", "j": "Journal of Behavioral and Experimental Economics", "t": ["honesty"], "m": ["field", "experiment"], "id": 35, "hl": 0}, {"y": 2021, "a": "Smetana, M., & Vranka, M.", "t2": "How moral foundations shape public approval of nuclear, chemical, and conventional strikes: new evidence from experimental surveys", "j": "International Interactions", "t": ["security", "moral"], "m": ["experiment", "survey"], "id": 36, "hl": 0}, {"y": 2021, "a": "Houdek, P., Bahník, Š., Hudík, M., & Vranka, M.", "t2": "Selection effects on dishonest behavior", "j": "Judgment and Decision Making", "t": ["honesty", "jdm"], "m": ["experiment"], "id": 37, "hl": 0}, {"y": 2021, "a": "Bahník, Š., Vranka, M. A., & Trefná, K.", "t2": "What makes euthanasia justifiable? The role of symptoms' characteristics and interindividual differences", "j": "Death Studies", "t": ["moral"], "m": ["experiment"], "id": 38, "hl": 0}, {"y": 2021, "a": "Bahník, Š., & Vranka, M. A.", "t2": "Consistency and contrast effects in moral evaluation of euthanasia", "j": "Current Psychology", "t": ["moral"], "m": ["experiment"], "id": 39, "hl": 0}, {"y": 2021, "a": "Bahník, Š., Efendić, E., & Vranka, M.", "t2": "Sacrificing oneself or another: The difference between prescriptive and normative judgments in moral evaluation", "j": "Psychological Reports", "t": ["moral"], "m": ["experiment"], "id": 40, "hl": 0}, {"y": 2020, "a": "Brandt, M. J., Kuppens, T., … Vranka, M., … & Zimmerman, J. L.", "t2": "Subjective status and perceived legitimacy across countries", "j": "European Journal of Social Psychology", "t": ["social"], "m": ["crossnational", "survey"], "id": 41, "hl": 0}, {"y": 2020, "a": "Colling, L. J., Szűcs, D., … Vranka, M. A., … & Henare, D. T.", "t2": "Registered Replication Report on Fischer, Castel, Dodd, and Pratt (2003)", "j": "Advances in Methods and Practices in Psychological Science", "t": ["openscience"], "m": ["multilab"], "id": 42, "hl": 0}, {"y": 2019, "a": "Vranka, M., Frollová, N., Pour, M., Nováková, J., & Houdek, P.", "t2": "Cheating Customers in Grocery Stores: A Field Study on Dishonesty", "j": "Journal of Behavioral and Experimental Economics", "t": ["honesty"], "m": ["field"], "id": 43, "hl": 0}, {"y": 2018, "a": "Klein, R. A., Vianello, M., … Vranka, M., … & Nosek, B. A.", "t2": "Many Labs 2: Investigating variation in replicability across samples and settings", "j": "Advances in Methods and Practices in Psychological Science", "t": ["openscience"], "m": ["multilab", "crossnational"], "hl": 1, "id": 44}, {"y": 2018, "a": "Houdek, P., Koblovský, P., Šťastný, D., & Vranka, M.", "t2": "Consumer Decision Making in the Information Age", "j": "Society", "t": ["jdm"], "m": [], "id": 45, "hl": 0}, {"y": 2018, "a": "Vranka, M. A., & Bahník, Š.", "t2": "Predictors of Bribe Taking: The Role of Bribe Size and Personality", "j": "Frontiers in Psychology", "t": ["honesty"], "m": ["experiment"], "id": 46, "hl": 0}, {"y": 2017, "a": "Bahník, Š., & Vranka, M.", "t2": "Growth mindset is not associated with scholastic aptitude in a large sample of university applicants", "j": "Personality and Individual Differences", "t": ["social"], "m": [], "id": 47, "hl": 0}, {"y": 2017, "a": "Bahník, Š., & Vranka, M.", "t2": "If it's difficult to pronounce, it might not be risky: The effect of fluency on judgment of risk does not generalize to new stimuli", "j": "Psychological Science", "t": ["jdm"], "m": ["experiment"], "hl": 1, "id": 48}, {"y": 2016, "a": "Cheung, I., Campbell, L., … Vranka, M., … & Yong, J. C.", "t2": "Registered Replication Report: Study 1 from Finkel, Rusbult, Kumashiro, & Hannon (2002)", "j": "Perspectives on Psychological Science", "t": ["openscience", "social"], "m": ["multilab"], "id": 49, "hl": 0}, {"y": 2016, "a": "Vranka, M., & Bahník, Š.", "t2": "Is the emotional dog blind to its choices? An attempt to reconcile the Social intuitionist model and the choice blindness effect", "j": "Experimental Psychology", "t": ["moral", "jdm"], "m": ["experiment"], "id": 50, "hl": 0}, {"y": 2016, "a": "Vranka, M., & Bahník, Š.", "t2": "Differences in autonomy of humans and ultrasocial insect. Commentary to The economic origins of ultrasociality", "j": "Behavioral and Brain Sciences", "t": ["social"], "m": [], "id": 51, "hl": 0}, {"y": 2015, "a": "Vranka, M., & Houdek, P.", "t2": "Many Faces of Bankers' Identity: How (not) to study dishonesty", "j": "Frontiers in Psychology", "t": ["honesty"], "m": [], "id": 52, "hl": 0}, {"y": 2015, "a": "Bahník, Š., Vranka, M., & Dlouhá, J.", "t2": "X good things in life: Processing fluency effects in the “Three good things in life” exercise", "j": "Journal of Research in Personality", "t": ["social"], "m": ["experiment"], "id": 53, "hl": 0}, {"y": 2014, "a": "Alogna, V. K., Attaya, M. K., … Vranka, M., … & Zwaan, R. A.", "t2": "Registered Replication Report: Schooler & Engstler-Schooler (1990)", "j": "Perspectives on Psychological Science", "t": ["openscience"], "m": ["multilab"], "id": 54, "hl": 0}, {"y": 2014, "a": "Klein, R. A., Ratliff, K. A., … Vranka, M., … & Nosek, B. A.", "t2": "Investigating variation in replicability: A “Many Labs” replication project", "j": "Social Psychology", "t": ["openscience"], "m": ["multilab", "crossnational"], "hl": 1, "id": 55}];
+const TOPICS={"honesty": "Dishonesty & Ethics", "moral": "Moral Psychology", "security": "Nuclear & Security", "openscience": "Open Science & Replication", "climate": "Climate Change", "health": "Health & COVID-19", "jdm": "Judgment & Decision-Making", "social": "Social Psychology"};
+const METHODS={"experiment": "Experiment", "survey": "Survey", "field": "Field experiment", "multilab": "Multi-lab / RRR", "crossnational": "Cross-national", "meta": "Meta-analysis"};
+const state={q:"",topics:new Set(),methods:new Set(),sort:"new"};
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.querySelectorAll('.nav-links button').forEach(b=>b.onclick=()=>go(b.dataset.p));
+document.querySelectorAll('[data-goto]').forEach(a=>a.onclick=e=>{e.preventDefault();go(a.dataset.goto)});
+function go(p){
+ document.querySelectorAll('.page').forEach(s=>s.classList.toggle('on',s.id===p));
+ document.querySelectorAll('.nav-links button').forEach(b=>b.classList.toggle('active',b.dataset.p===p));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+const tf=document.getElementById('topicFilters');
+Object.entries(TOPICS).forEach(([k,v])=>{const c=document.createElement('button');c.className='chip';c.textContent=v;c.onclick=()=>{c.classList.toggle('on');toggle(state.topics,k);render()};tf.appendChild(c)});
+const mf=document.getElementById('methodFilters');
+Object.entries(METHODS).forEach(([k,v])=>{const c=document.createElement('button');c.className='chip';c.textContent=v;c.onclick=()=>{c.classList.toggle('mm');c.classList.toggle('on');toggle(state.methods,k);render()};mf.appendChild(c)});
+function toggle(set,k){set.has(k)?set.delete(k):set.add(k)}
+document.getElementById('searchInput').oninput=e=>{state.q=e.target.value.toLowerCase();render()};
+document.getElementById('sortOrder').onchange=e=>{state.sort=e.target.value;render()};
+function bold(a){return a.replace(/Vranka, M\. A\./g,'<b>Vranka, M. A.</b>').replace(/Vranka, M\./g,'<b>Vranka, M.</b>')}
+function card(p){
+ let tags=p.t.map(x=>`<span class="tag t">${TOPICS[x]}</span>`).join('')+p.m.map(x=>`<span class="tag m">${METHODS[x]}</span>`).join('');
+ let star=p.hl?'<span class="tag star">★ Featured venue</span>':'';
+ let link=p.osf?` · <a href="${p.osf}" target="_blank" rel="noopener">OSF</a>`:'';
+ return `<div class="pub ${p.hl?'hl':''}"><div class="yr-badge">${p.y}</div><h3>${p.t2}</h3><div class="auth">${bold(p.a)}</div><div class="jr">${p.j}${link}</div><div class="tags">${star}${tags}</div></div>`;
+}
+function render(){
+ let r=PUBS.filter(p=>{
+  if(state.topics.size&&![...state.topics].some(t=>p.t.includes(t)))return false;
+  if(state.methods.size&&![...state.methods].some(m=>p.m.includes(m)))return false;
+  if(state.q){const s=(p.t2+' '+p.a+' '+p.j).toLowerCase();if(!s.includes(state.q))return false}
+  return true;
+ });
+ r.sort((a,b)=>state.sort==='new'?b.y-a.y:a.y-b.y);
+ document.getElementById('pcount').textContent=r.length;
+ document.getElementById('papers').innerHTML=r.length?r.map(card).join(''):'<p style="color:var(--muted)">No publications match these filters.</p>';
+}
+render();
+</script>
+</body>
+</html>
