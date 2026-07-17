@@ -2,102 +2,104 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Marek Vranka | Research Website</title>
 <meta name="description" content="Marek Vranka — social psychology & behavioral science, Charles University Prague. Moral psychology, (dis)honesty, security attitudes, open science.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d1117;--panel:#161b22;--panel2:#1c2128;--border:#30363d;--text:#e6edf3;--muted:#8b949e;--dim:#6e7681;--purple:#c9a0dc;--green:#7ee787;--blue:#79c0ff;--radius:14px}
+:root{--bg:#ffffff;--panel:#ffffff;--panel2:#f5f6f8;--border:#e2e5ea;--text:#22262b;--muted:#54595f;--dim:#8a9099;--maroon:#8c1933;--maroon-d:#6f142a;--navy:#00102e;--gold:#c2953b;--olive:#7a5c14;--radius:12px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
-a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Roboto,system-ui,-apple-system,Segoe UI,Arial,sans-serif;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--maroon);text-decoration:none}a:hover{text-decoration:underline}
 .wrap{max-width:1060px;margin:0 auto;padding:0 22px}
-header.nav{position:sticky;top:0;z-index:50;background:rgba(22,27,34,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+h1,h2,h3{font-family:"Roboto Slab",Georgia,serif;color:var(--navy)}
+header.nav{position:sticky;top:0;z-index:50;background:var(--maroon);border-bottom:3px solid var(--gold)}
 .nav-in{max-width:1060px;margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:20px}
-.brand{font-weight:700;font-size:17px}.brand span{color:var(--purple)}
+.brand{font-family:"Roboto Slab",serif;font-weight:700;font-size:19px;color:#fff}.brand span{color:var(--gold)}
 .nav-links{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
-.nav-links button{background:none;border:0;color:var(--muted);font:inherit;font-weight:600;padding:8px 14px;border-radius:9px;cursor:pointer;font-size:14.5px}
-.nav-links button:hover{color:var(--text);background:var(--panel2)}
-.nav-links button.active{color:var(--bg);background:var(--purple)}
+.nav-links button{background:none;border:0;color:rgba(255,255,255,.85);font:inherit;font-weight:600;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:14.5px}
+.nav-links button:hover{color:#fff;background:rgba(255,255,255,.15)}
+.nav-links button.active{color:var(--maroon);background:#fff}
 .page{display:none;padding:38px 0 80px;animation:fade .4s}.page.on{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .hero{display:flex;gap:30px;align-items:flex-start;flex-wrap:wrap}
-.avatar{width:132px;height:132px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--purple),var(--blue));display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;color:#0d1117;border:1px solid var(--border)}
+.avatar{width:132px;height:132px;border-radius:50%;flex:none;background:linear-gradient(135deg,var(--maroon),var(--gold));display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:700;color:#fff;font-family:"Roboto Slab",serif;border:1px solid var(--border)}
 .hero-body{flex:1;min-width:300px}
-h1{font-size:30px;margin:0 0 4px;letter-spacing:-.4px}
-.subtitle{color:var(--purple);font-weight:600;margin:0 0 14px}
+h1{font-size:32px;margin:0 0 4px;letter-spacing:-.3px}
+.subtitle{color:var(--maroon);font-weight:700;margin:0 0 14px;font-family:Roboto,sans-serif}
 .affil{color:var(--muted);font-size:14.5px;margin-bottom:16px}
 .socials{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
 .socials a{display:inline-flex;align-items:center;gap:7px;background:var(--panel2);border:1px solid var(--border);padding:7px 13px;border-radius:9px;color:var(--text);font-size:13.5px;font-weight:600}
-.socials a:hover{border-color:var(--purple);text-decoration:none}
-h2.sec{font-size:20px;margin:44px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
-h2.sec::before{content:"";width:4px;height:20px;background:var(--purple);border-radius:3px}
-.about p{color:#c9d1d9;margin:0 0 14px}
+.socials a:hover{border-color:var(--maroon);color:var(--maroon);text-decoration:none}
+h2.sec{font-size:22px;margin:44px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:10px}
+h2.sec::before{content:"";width:5px;height:22px;background:var(--maroon);border-radius:3px}
+.about p{color:#33383e;margin:0 0 14px}
 .news{list-style:none;padding:0;margin:0;display:grid;gap:10px}
 .news li{display:flex;gap:14px;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:13px 16px}
-.news .yr{color:var(--green);font-weight:700;font-size:13px;flex:none;width:66px;padding-top:1px}
-.news .tx{color:#c9d1d9;font-size:14.5px}
+.news .yr{color:var(--maroon);font-weight:700;font-size:13px;flex:none;width:66px;padding-top:1px}
+.news .tx{color:#33383e;font-size:14.5px}
 .dash{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:6px 0 8px}
-.stat{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center}
-.stat .n{font-size:30px;font-weight:800;color:var(--purple);letter-spacing:-.5px}
+.stat{background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 16px;text-align:center}
+.stat .n{font-size:30px;font-weight:700;color:var(--maroon);font-family:"Roboto Slab",serif;letter-spacing:-.5px}
 .stat .l{color:var(--muted);font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
 .stat .src{color:var(--dim);font-size:11px;margin-top:2px}
-.topcited{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin:18px 0 4px}
-.topcited h3{margin:0 0 12px;font-size:14px;color:var(--green);text-transform:uppercase;letter-spacing:.5px}
+.topcited{background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin:18px 0 4px}
+.topcited h3{margin:0 0 12px;font-size:13px;color:var(--maroon);text-transform:uppercase;letter-spacing:.5px;font-family:Roboto,sans-serif}
 .tc-row{display:flex;gap:12px;align-items:baseline;padding:7px 0;border-top:1px solid var(--border);cursor:pointer}
 .tc-row:first-of-type{border-top:0}
-.tc-c{color:var(--purple);font-weight:800;font-size:15px;flex:none;width:52px;text-align:right}
-.tc-t{font-size:13.5px;color:#c9d1d9}.tc-row:hover .tc-t{color:var(--text)}
-.pub{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:15px 17px;margin-bottom:12px;transition:border-color .15s}
-.pub:hover{border-color:#484f58}.pub.hl{border-left:3px solid var(--green)}
+.tc-c{color:var(--maroon);font-weight:700;font-size:15px;flex:none;width:52px;text-align:right;font-family:"Roboto Slab",serif}
+.tc-t{font-size:13.5px;color:#33383e}.tc-row:hover .tc-t{color:var(--maroon)}
+.pub{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:15px 17px;margin-bottom:12px;transition:border-color .15s,box-shadow .15s}
+.pub:hover{border-color:var(--maroon);box-shadow:0 1px 6px rgba(140,25,51,.08)}
+.pub.hl{border-left:3px solid var(--gold)}
 .pub .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
 .pub .yr-badge{color:var(--dim);font-weight:700;font-size:13px}
-.pub .cbadge{color:var(--purple);font-weight:700;font-size:12.5px;background:rgba(201,160,220,.12);border:1px solid rgba(201,160,220,.3);padding:2px 9px;border-radius:20px;white-space:nowrap}
-.pub h3{margin:3px 0 5px;font-size:16px;line-height:1.35;font-weight:650;color:var(--text);cursor:pointer}
-.pub h3:hover{color:var(--purple)}
-.pub h3 .caret{color:var(--dim);font-size:12px;margin-right:6px}
-.pub .auth{color:var(--muted);font-size:13.5px;margin-bottom:4px}.pub .auth b{color:#c9d1d9}
-.pub .jr{color:var(--blue);font-style:italic;font-size:13.5px}
+.pub .cbadge{color:var(--maroon);font-weight:700;font-size:12.5px;background:rgba(140,25,51,.08);border:1px solid rgba(140,25,51,.25);padding:2px 9px;border-radius:20px;white-space:nowrap}
+.pub h3{margin:3px 0 5px;font-size:16.5px;line-height:1.35;font-weight:600;color:var(--navy);cursor:pointer}
+.pub h3:hover{color:var(--maroon)}
+.pub h3 .caret{color:var(--maroon);font-size:12px;margin-right:6px}
+.pub .auth{color:var(--muted);font-size:13.5px;margin-bottom:4px}.pub .auth b{color:var(--text)}
+.pub .jr{color:var(--maroon);font-style:italic;font-size:13.5px}
 .pub .tags{margin-top:10px;display:flex;gap:6px;flex-wrap:wrap}
 .tag{font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:20px;border:1px solid transparent}
-.tag.t{color:var(--purple);background:rgba(201,160,220,.12);border-color:rgba(201,160,220,.3)}
-.tag.m{color:var(--green);background:rgba(126,231,135,.1);border-color:rgba(126,231,135,.28)}
-.tag.star{color:var(--green);background:rgba(126,231,135,.12);border-color:rgba(126,231,135,.3)}
-.tag.oa{color:var(--blue);background:rgba(121,192,255,.1);border-color:rgba(121,192,255,.3)}
-.abs{display:none;margin-top:12px;padding:12px 14px;background:var(--bg);border:1px solid var(--border);border-radius:9px;font-size:13.5px;color:#c9d1d9}
+.tag.t{color:var(--maroon);background:rgba(140,25,51,.08);border-color:rgba(140,25,51,.22)}
+.tag.m{color:var(--olive);background:rgba(194,149,59,.14);border-color:rgba(194,149,59,.38)}
+.tag.star{color:var(--olive);background:rgba(194,149,59,.16);border-color:rgba(194,149,59,.4)}
+.tag.oa{color:var(--navy);background:rgba(0,16,46,.06);border-color:rgba(0,16,46,.2)}
+.abs{display:none;margin-top:12px;padding:12px 14px;background:var(--panel2);border:1px solid var(--border);border-radius:9px;font-size:13.5px;color:#33383e}
 .pub.open .abs{display:block}
 .acts{margin-top:11px;display:flex;gap:8px;flex-wrap:wrap}
 .acts button,.acts a{display:inline-flex;align-items:center;gap:5px;background:var(--panel2);border:1px solid var(--border);color:var(--muted);font:inherit;font-size:12px;font-weight:600;padding:5px 10px;border-radius:8px;cursor:pointer}
-.acts button:hover,.acts a:hover{color:var(--text);border-color:var(--purple);text-decoration:none}
-.controls{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin:20px 0 22px}
-#searchInput{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:10px;color:var(--text);padding:11px 14px;font:inherit;font-size:14.5px;margin-bottom:14px}
-#searchInput:focus{outline:none;border-color:var(--purple)}
+.acts button:hover,.acts a:hover{color:var(--maroon);border-color:var(--maroon);text-decoration:none}
+.controls{background:var(--panel2);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin:20px 0 22px}
+#searchInput{width:100%;background:#fff;border:1px solid var(--border);border-radius:10px;color:var(--text);padding:11px 14px;font:inherit;font-size:14.5px;margin-bottom:14px}
+#searchInput:focus{outline:none;border-color:var(--maroon)}
 .fgroup{margin-bottom:11px}
 .fgroup .flabel{color:var(--dim);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px}
 .chips{display:flex;gap:7px;flex-wrap:wrap}
-.chip{background:var(--panel2);border:1px solid var(--border);color:var(--muted);font:inherit;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:20px;cursor:pointer}
-.chip:hover{color:var(--text)}
-.chip.on{color:var(--bg);background:var(--purple);border-color:var(--purple)}
-.chip.on.mm{background:var(--green);border-color:var(--green)}
-.chip.yr.on{background:var(--blue);border-color:var(--blue)}
+.chip{background:#fff;border:1px solid var(--border);color:var(--muted);font:inherit;font-size:12.5px;font-weight:600;padding:5px 11px;border-radius:20px;cursor:pointer}
+.chip:hover{color:var(--text);border-color:var(--dim)}
+.chip.on{color:#fff;background:var(--maroon);border-color:var(--maroon)}
+.chip.on.mm{background:var(--gold);border-color:var(--gold);color:#3d2d08}
+.chip.yr.on{background:var(--navy);border-color:var(--navy);color:#fff}
 .toggles{display:flex;gap:16px;flex-wrap:wrap;margin-top:6px;padding-top:12px;border-top:1px solid var(--border)}
 .toggles label{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer}
-.toggles input{accent-color:var(--purple)}
+.toggles input{accent-color:var(--maroon)}
 .rowflex{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:16px}
-.count{color:var(--muted);font-size:13.5px}.count b{color:var(--purple)}
-#sortOrder,#journalFilter{background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:9px;padding:7px 11px;font:inherit;font-size:13px}
-.yearhead{color:var(--green);font-weight:700;font-size:15px;margin:22px 0 10px;border-bottom:1px dashed var(--border);padding-bottom:6px}
+.count{color:var(--muted);font-size:13.5px}.count b{color:var(--maroon)}
+#sortOrder,#journalFilter{background:#fff;border:1px solid var(--border);color:var(--text);border-radius:9px;padding:7px 11px;font:inherit;font-size:13px}
+.yearhead{color:var(--maroon);font-weight:700;font-size:15px;margin:22px 0 10px;border-bottom:1px dashed var(--border);padding-bottom:6px;font-family:"Roboto Slab",serif}
 .talks{display:grid;gap:10px}
 .talk{display:flex;gap:14px;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:13px 16px}
-.talk .when{color:var(--green);font-weight:700;font-size:13px;flex:none;width:78px}
-.talk .tt{font-weight:650;font-size:14.5px}.talk .td{color:var(--muted);font-size:13px}
+.talk .when{color:var(--maroon);font-weight:700;font-size:13px;flex:none;width:78px}
+.talk .tt{font-weight:600;font-size:14.5px;color:var(--navy)}.talk .td{color:var(--muted);font-size:13px}
 .cv-grid{display:grid;gap:8px}
 .cv-item{display:flex;gap:16px;background:var(--panel);border:1px solid var(--border);border-radius:11px;padding:13px 16px}
-.cv-item .when{color:var(--green);font-weight:700;font-size:13px;flex:none;width:96px}
-.cv-item .what .t1{font-weight:650;font-size:14.5px}.cv-item .what .t2{color:var(--muted);font-size:13.5px}
+.cv-item .when{color:var(--maroon);font-weight:700;font-size:13px;flex:none;width:96px}
+.cv-item .what .t1{font-weight:600;font-size:14.5px;color:var(--navy)}.cv-item .what .t2{color:var(--muted);font-size:13.5px}
 .pill-row{display:flex;gap:8px;flex-wrap:wrap}
-.pill{background:var(--panel2);border:1px solid var(--border);border-radius:20px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--purple)}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--purple);color:#0d1117;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:10px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:99}
+.pill{background:var(--panel2);border:1px solid var(--border);border-radius:20px;padding:6px 13px;font-size:13px;font-weight:600;color:var(--maroon)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--maroon);color:#fff;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:10px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:99}
 .toast.show{opacity:1}
 .foot{color:var(--dim);font-size:13px;text-align:center;padding:34px 0 10px;border-top:1px solid var(--border);margin-top:50px}
-@media(max-width:720px){.dash{grid-template-columns:repeat(2,1fr)}h1{font-size:25px}.cv-item .when{width:70px}}
+@media(max-width:720px){.dash{grid-template-columns:repeat(2,1fr)}h1{font-size:26px}.cv-item .when{width:70px}}
 </style></head><body>
 <header class="nav"><div class="nav-in"><div class="brand">Marek <span>Vranka</span></div>
 <nav class="nav-links"><button data-p="home" class="active">Home</button><button data-p="research">Research</button><button data-p="vita">Vita</button><button data-p="contact">Contact</button></nav></div></header>
@@ -113,8 +115,8 @@ h2.sec::before{content:"";width:4px;height:20px;background:var(--purple);border-
  <div style="color:var(--dim);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px">Upcoming</div>
  <div class="talks"><div class="talk"><div class="when">Sep 2026</div><div><div class="tt">Keynote — SPAO conference</div><div class="td">On moral judgment and behavioral science (invited keynote).</div></div></div><div class="talk"><div class="when">Sep 2026</div><div><div class="tt">BRAINSTORM expert meeting, Prague</div><div class="td">Organizer & host, “Metascience of Behavior Change.”</div></div></div></div>
  <div style="color:var(--dim);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin:16px 0 8px">Previous</div>
- <div class="talks"><div class="talk"><div class="when">2020</div><div><div class="tt">32nd International Congress of Psychology, Prague</div><div class="td">Chair, Methodology in Psychology Working Group.</div></div></div><div class="talk"><div class="when">2022–24</div><div><div class="tt">Harvard Belfer Center — Beyond Nuclear Deterrence WG</div><div class="td">Member, Harvard–MacArthur nuclear-deterrence network.</div></div></div></div>
- <h2 class="sec">Selected Publications</h2><div class="pub "><div class="top"><div class="yr-badge">2024</div><span class="cbadge">11 citations</span></div><h3 style="cursor:default">Taking algorithmic (vs. human) advice reveals different goals to others</h3><div class="auth">Efendić, E., Van de Calseyde, P. P., Bahník, Š., & <b><b>Vranka, M.</b> A.</b></div><div class="jr">International Journal of Human–Computer Interaction</div><div class="tags"><span class="tag t">Judgment & Decision-Making</span></div></div><div class="pub hl"><div class="top"><div class="yr-badge">2022</div><span class="cbadge">46 citations</span></div><h3 style="cursor:default">A global experiment on motivating social distancing during the COVID-19 pandemic</h3><div class="auth">Legate, N., Nguyen, T. V., … <b>Vranka, M.</b>, … & Ogbonnaya, C. E.</div><div class="jr">PNAS</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Health & COVID-19</span></div></div><div class="pub hl"><div class="top"><div class="yr-badge">2022</div></div><h3 style="cursor:default">The globalizability of temporal discounting</h3><div class="auth">Ruggeri, K., Panin, A., … <b>Vranka, M.</b>, … & Toscano, F.</div><div class="jr">Nature Human Behaviour</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Judgment & Decision-Making</span></div></div><div class="pub hl"><div class="top"><div class="yr-badge">2024</div></div><h3 style="cursor:default">Addressing climate change with behavioral science: A global intervention tournament in 63 countries</h3><div class="auth">Vlasceanu, M., Doell, K. C., … <b>Vranka, M.</b>, … & Lutz, A. E.</div><div class="jr">Science Advances</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Climate Change</span></div></div><div class="pub "><div class="top"><div class="yr-badge">2024</div><span class="cbadge">5 citations</span></div><h3 style="cursor:default">Moral hypocrisy and the dichotomy of hypothetical versus real choices in prosocial behavior</h3><div class="auth"><b>Vranka, M.</b>, & Houdek, P.</div><div class="jr">Journal of Economic Psychology</div><div class="tags"><span class="tag t">Moral Psychology</span><span class="tag t">Dishonesty & Ethics</span></div></div><div class="pub hl"><div class="top"><div class="yr-badge">2022</div></div><h3 style="cursor:default">Situational factors shape moral judgements in the trolley dilemma in Eastern, Southern and Western countries in a culturally diverse sample</h3><div class="auth">Bago, B., Kovacs, M., … <b>Vranka, M.</b>, … & Matibag, C. J.</div><div class="jr">Nature Human Behaviour</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Moral Psychology</span></div></div>
+ <div class="talks"><div class="talk"><div class="when">2022–24</div><div><div class="tt">Harvard Belfer Center — Beyond Nuclear Deterrence WG</div><div class="td">Member, Harvard–MacArthur nuclear-deterrence network.</div></div></div><div class="talk"><div class="when">2020</div><div><div class="tt">32nd International Congress of Psychology, Prague</div><div class="td">Chair, Methodology in Psychology Working Group.</div></div></div></div>
+ <h2 class="sec">Selected Publications</h2><div class="pub "><div class="top"><div class="yr-badge">2024</div><span class="cbadge">11 citations</span></div><h3 style="cursor:default">Taking algorithmic (vs. human) advice reveals different goals to others</h3><div class="auth">Efendić, E., Van de Calseyde, P. P., Bahník, Š., & <b><b>Vranka, M.</b> A.</b></div><div class="jr">International Journal of Human–Computer Interaction</div><div class="tags"><span class="tag t">Judgment & Decision-Making</span></div></div><div class="pub hl"><div class="top"><div class="yr-badge">2024</div></div><h3 style="cursor:default">Addressing climate change with behavioral science: A global intervention tournament in 63 countries</h3><div class="auth">Vlasceanu, M., Doell, K. C., … <b>Vranka, M.</b>, … & Lutz, A. E.</div><div class="jr">Science Advances</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Climate Change</span></div></div><div class="pub "><div class="top"><div class="yr-badge">2024</div><span class="cbadge">5 citations</span></div><h3 style="cursor:default">Moral hypocrisy and the dichotomy of hypothetical versus real choices in prosocial behavior</h3><div class="auth"><b>Vranka, M.</b>, & Houdek, P.</div><div class="jr">Journal of Economic Psychology</div><div class="tags"><span class="tag t">Moral Psychology</span><span class="tag t">Dishonesty & Ethics</span></div></div><div class="pub hl"><div class="top"><div class="yr-badge">2022</div><span class="cbadge">46 citations</span></div><h3 style="cursor:default">A global experiment on motivating social distancing during the COVID-19 pandemic</h3><div class="auth">Legate, N., Nguyen, T. V., … <b>Vranka, M.</b>, … & Ogbonnaya, C. E.</div><div class="jr">PNAS</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Health & COVID-19</span></div></div><div class="pub hl"><div class="top"><div class="yr-badge">2022</div></div><h3 style="cursor:default">The globalizability of temporal discounting</h3><div class="auth">Ruggeri, K., Panin, A., … <b>Vranka, M.</b>, … & Toscano, F.</div><div class="jr">Nature Human Behaviour</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Judgment & Decision-Making</span></div></div><div class="pub hl"><div class="top"><div class="yr-badge">2022</div></div><h3 style="cursor:default">Situational factors shape moral judgements in the trolley dilemma in Eastern, Southern and Western countries in a culturally diverse sample</h3><div class="auth">Bago, B., Kovacs, M., … <b>Vranka, M.</b>, … & Matibag, C. J.</div><div class="jr">Nature Human Behaviour</div><div class="tags"><span class="tag star">★ Featured venue</span><span class="tag t">Moral Psychology</span></div></div>
  <p style="color:var(--muted);font-size:14px;margin-top:14px">Explore the full, searchable record on the <a href="#" data-goto="research">Research</a> page — filter by topic, method, year, journal, or coauthor; sort by citations; expand abstracts.</p>
 </div></main>
 
@@ -149,10 +151,10 @@ h2.sec::before{content:"";width:4px;height:20px;background:var(--purple);border-
 <main id="vita" class="page"><div class="wrap">
  <h1>Vita</h1>
  <h2 class="sec">Education</h2><div class="cv-grid"><div class="cv-item"><div class="when">2025</div><div class="what"><div class="t1">PhD, Social Psychology</div><div class="t2">Faculty of Arts, Dept. of Psychology, Charles University — Supervisors: Prof. Lenka Šulová & Doc. Ilona Gillernová; Mentor: Dr. Petr Boschek</div></div></div><div class="cv-item"><div class="when">2014</div><div class="what"><div class="t1">MSc, Corporate Economics & Management</div><div class="t2">Faculty of Business Administration, Prague University of Economics and Business (Minor: Behavioral Economics)</div></div></div><div class="cv-item"><div class="when">2012</div><div class="what"><div class="t1">MA, Psychology</div><div class="t2">Faculty of Arts, Dept. of Psychology, Charles University</div></div></div></div>
- <h2 class="sec">Positions</h2><div class="cv-grid"><div class="cv-item"><div class="when">2016 –</div><div class="what"><div class="t1">Researcher & Lecturer</div><div class="t2">Faculty of Social Sciences, Dept. of Marketing Communication & PR, Charles University</div></div></div><div class="cv-item"><div class="when">2018 –</div><div class="what"><div class="t1">Researcher</div><div class="t2">Peace Research Center Prague, Faculty of Social Sciences, Charles University</div></div></div><div class="cv-item"><div class="when">2017 – 2024</div><div class="what"><div class="t1">Researcher; Head of CEVYZ Lab (2020–2024)</div><div class="t2">Faculty of Business Administration, Prague University of Economics and Business</div></div></div><div class="cv-item"><div class="when">2018 – 2021</div><div class="what"><div class="t1">Deputy Head of Department</div><div class="t2">Faculty of Social Sciences, Charles University</div></div></div><div class="cv-item"><div class="when">2016 – 2019</div><div class="what"><div class="t1">Researcher</div><div class="t2">National Institute of Mental Health, Klecany</div></div></div><div class="cv-item"><div class="when">2012 – 2020</div><div class="what"><div class="t1">Lecturer</div><div class="t2">Faculty of Arts, Dept. of Psychology, Charles University</div></div></div></div>
+ <h2 class="sec">Positions</h2><div class="cv-grid"><div class="cv-item"><div class="when">2018 –</div><div class="what"><div class="t1">Researcher</div><div class="t2">Peace Research Center Prague, Faculty of Social Sciences, Charles University</div></div></div><div class="cv-item"><div class="when">2016 –</div><div class="what"><div class="t1">Researcher & Lecturer</div><div class="t2">Faculty of Social Sciences, Dept. of Marketing Communication & PR, Charles University</div></div></div><div class="cv-item"><div class="when">2017 – 2024</div><div class="what"><div class="t1">Researcher; Head of CEVYZ Lab (2020–2024)</div><div class="t2">Faculty of Business Administration, Prague University of Economics and Business</div></div></div><div class="cv-item"><div class="when">2018 – 2021</div><div class="what"><div class="t1">Deputy Head of Department</div><div class="t2">Faculty of Social Sciences, Charles University</div></div></div><div class="cv-item"><div class="when">2016 – 2019</div><div class="what"><div class="t1">Researcher</div><div class="t2">National Institute of Mental Health, Klecany</div></div></div><div class="cv-item"><div class="when">2012 – 2020</div><div class="what"><div class="t1">Lecturer</div><div class="t2">Faculty of Arts, Dept. of Psychology, Charles University</div></div></div></div>
  <h2 class="sec">Teaching</h2><div class="pill-row"><span class="pill">Social Psychology</span><span class="pill">Methodology</span><span class="pill">Statistics</span><span class="pill">Moral Psychology</span><span class="pill">Well-being</span><span class="pill">Behavioral Economics</span><span class="pill">Open Science</span><span class="pill">Experimental Psychology</span></div>
  <p style="color:var(--muted);font-size:13.5px;margin-top:12px">Supervision: 50+ bachelor and 25+ master students (Charles University).</p>
- <h2 class="sec">Service &amp; Organization</h2><div class="cv-grid"><div class="cv-item"><div class="when">2026</div><div class="what"><div class="t1">Organizer, <em>Metascience of Behavior Change</em> (BRAINSTORM) expert meeting, Prague</div></div></div><div class="cv-item"><div class="when">2020</div><div class="what"><div class="t1">Chair, Methodology in Psychology Working Group, 32nd International Congress of Psychology, Prague</div></div></div><div class="cv-item"><div class="when">2022 –</div><div class="what"><div class="t1">Reviewer, Grant Agency of Charles University</div></div></div><div class="cv-item"><div class="when">2019 –</div><div class="what"><div class="t1">Reviewer, Technology Agency of the Czech Republic</div></div></div><div class="cv-item"><div class="when">2013 –</div><div class="what"><div class="t1">Journal reviewer (Royal Society Open Science, JBDM, Applied Economics, JBEE, Czechoslovak Psychology, …)</div></div></div><div class="cv-item"><div class="when">2022 – 2024</div><div class="what"><div class="t1">Member, Harvard Belfer Center — Beyond Nuclear Deterrence Working Group</div></div></div></div>
+ <h2 class="sec">Service &amp; Organization</h2><div class="cv-grid"><div class="cv-item"><div class="when">2026</div><div class="what"><div class="t1">Organizer, <em>Metascience of Behavior Change</em> (BRAINSTORM) expert meeting, Prague</div></div></div><div class="cv-item"><div class="when">2022 –</div><div class="what"><div class="t1">Reviewer, Grant Agency of Charles University</div></div></div><div class="cv-item"><div class="when">2022 – 2024</div><div class="what"><div class="t1">Member, Harvard Belfer Center — Beyond Nuclear Deterrence Working Group</div></div></div><div class="cv-item"><div class="when">2020</div><div class="what"><div class="t1">Chair, Methodology in Psychology Working Group, 32nd International Congress of Psychology, Prague</div></div></div><div class="cv-item"><div class="when">2019 –</div><div class="what"><div class="t1">Reviewer, Technology Agency of the Czech Republic</div></div></div><div class="cv-item"><div class="when">2013 –</div><div class="what"><div class="t1">Journal reviewer (Royal Society Open Science, JBDM, Applied Economics, JBEE, Czechoslovak Psychology, …)</div></div></div></div>
  <h2 class="sec">Memberships</h2><div class="cv-grid"><div class="cv-item"><div class="when">2026 –</div><div class="what"><div class="t1">International Society for Moral Psychology</div></div></div><div class="cv-item"><div class="when">2025 –</div><div class="what"><div class="t1">Society for the Improvement of Psychological Science</div></div></div><div class="cv-item"><div class="when">2017 –</div><div class="what"><div class="t1">Psychological Science Accelerator Network</div></div></div><div class="cv-item"><div class="when">2016 –</div><div class="what"><div class="t1">Society for Judgment and Decision Making</div></div></div></div>
 </div></main>
 
