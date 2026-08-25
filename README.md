@@ -1,32 +1,66 @@
-# Marek Vranka — academic website
+# marekvranka.github.io
 
-A single-page academic site (research profile, filterable publications, vita, contact),
-modeled on the layout of Eugen Dimant's site. Pure static HTML/CSS/JS — no build step.
+Personal academic website for Marek Vranka — a single static page, hosted free on GitHub Pages.
 
-## How to publish it on GitHub Pages (free, ~5 minutes)
+**Live:** https://marekvranka.github.io
 
-1. Create a GitHub account (if you don't have one) at https://github.com.
-2. Create a **new repository** named exactly:  `YOURUSERNAME.github.io`
-   (replace YOURUSERNAME with your GitHub username — this exact name makes it a personal site).
-   Keep it **Public**. Don't add a README (this folder already has one).
-3. On the new repo page, click **"uploading an existing file"** and drag in
-   `index.html`, `.nojekyll`, and `README.md` from this folder. Commit.
-4. Go to the repo's **Settings → Pages**. Under "Build and deployment", set
-   Source = "Deploy from a branch", Branch = `main` / root. Save.
-5. Wait 1–2 minutes. Your site is live at:  `https://YOURUSERNAME.github.io`
+## How it stays up to date
 
-### Or, using git from the command line
-```bash
-cd website-vranka
-git init && git add -A && git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/YOURUSERNAME/YOURUSERNAME.github.io.git
-git push -u origin main
+Citation counts, abstracts and open-access flags come from [OpenAlex](https://openalex.org).
+A GitHub Action (`.github/workflows/update-citations.yml`) runs **on the 1st of every month**,
+re-fetches the numbers, rebuilds `index.html`, and commits the result. You don't have to do anything.
+
+You can also trigger it by hand: repo → **Actions** → *Update citations from OpenAlex* → **Run workflow**.
+
+> GitHub pauses scheduled workflows after 60 days without repository activity and emails you.
+> Click "Enable workflow" in the Actions tab to resume.
+
+## Files
+
+| Path | What it is |
+|---|---|
+| `index.html` | The built site. **Generated — don't edit by hand.** |
+| `publications.json` | Source of truth: one entry per paper. Edit this to add a publication. |
+| `meta.json` | When citations were last refreshed. Written by the fetch script. |
+| `build.py` | Builds `index.html` from the data + template. |
+| `template.html` | Page structure. |
+| `style.css` | All styling. |
+| `app.js` | Filtering, charts, co-author network, research DNA. |
+| `fetch_openalex.py` | Pulls fresh citation data from OpenAlex. |
+| `CV_Vranka.pdf` | Shown in the CV modal and offered for download. |
+
+## Adding a publication
+
+1. Add an entry to `publications.json`:
+
+```json
+{
+ "y": 2027,
+ "a": "Vranka, M., & Someone, A.",
+ "t2": "Title of the paper",
+ "j": "Journal Name",
+ "t": ["moral"],
+ "m": ["experiment"],
+ "doi": "10.1234/example",
+ "co": ["Someone"],
+ "hl": 0
+}
 ```
-Then enable Pages as in step 4 above.
+   `t` = topics, `m` = methods (keys are listed at the top of `build.py`),
+   `co` = co-author surnames for the network, `hl` = 1 to flag a flagship venue.
 
-## Editing
-Everything lives in `index.html`. Publications are a JSON array near the bottom
-(`const PUBS = [...]`); add an entry and it appears in the filters automatically.
-To add a photo, replace the `<div class="avatar">MV</div>` block with
-`<img class="avatar" src="photo.jpg" alt="Marek Vranka">` and drop `photo.jpg` in this folder.
+2. Run `python build.py` — or just let the monthly Action do it.
+   Citations fill in automatically once OpenAlex indexes the DOI.
+
+## Editing text (bio, news, talks, CV entries)
+
+All prose lives near the top of `build.py` as plain Python lists.
+Change it there, run `python build.py`, commit.
+
+## Running locally
+
+```bash
+python fetch_openalex.py   # optional: refresh citations
+python build.py            # regenerate index.html
+```
+No dependencies beyond the Python standard library.

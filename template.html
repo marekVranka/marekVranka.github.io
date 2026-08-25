@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__NAME__ | Research</title>
+<meta name="description" content="__NAME__ — social psychology and behavioral science at Charles University Prague. Moral judgment, (dis)honesty, nuclear and security attitudes, open science.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700&display=swap" rel="stylesheet">
+<style>__CSS__</style>
+</head>
+<body>
+
+<header class="top">
+ <div class="top-in">
+  <div class="ava">MV</div>
+  <div class="who">
+   <div class="nm">__NAME__</div>
+   <div class="rl">__ROLE__ · __INST__</div>
+  </div>
+  <nav class="main">
+   <button data-p="home" class="on">Home</button>
+   <button data-p="research">Research</button>
+   <button data-p="vita">Vita</button>
+  </nav>
+ </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<main id="home" class="page on"><div class="wrap">
+
+ <div class="card pad">
+  <h2 class="sec">About</h2>
+  <div class="about-grid">
+   <div>__BIO1__</div>
+   <div>__BIO2__</div>
+  </div>
+ </div>
+
+ <div class="home-grid">
+
+  <div class="card pad">
+   <div class="btn-row">
+    <button class="btn pri" onclick="go('research')">Explore publications</button>
+    <button class="btn" onclick="openCV()">CV</button>
+    <a class="btn" href="mailto:32329117@fsv.cuni.cz">Email</a>
+   </div>
+   <div class="btn-row">__LINKS__</div>
+   <div class="meta-row"><span class="meta-tag">Focus</span><span class="meta-val">__FOCUS__</span></div>
+   <div class="meta-row"><span class="meta-tag">Methods</span><span class="meta-val">__METHODSLINE__</span></div>
+
+   <div class="subhead">Upcoming</div>
+   __TALKS_UP__
+   <div class="subhead">Previously</div>
+   __TALKS_PREV__
+  </div>
+
+  <div class="card pad">
+   <h2 class="sec">Research news</h2>
+   <div class="scroller">__NEWS__</div>
+  </div>
+
+  <div class="card pad">
+   <h2 class="sec">Selected publications</h2>
+   __SELPUBS__
+   <div style="margin-top:12px">
+    <button class="btn" style="width:100%;justify-content:center" onclick="go('research')">All publications →</button>
+   </div>
+  </div>
+
+ </div>
+</div></main>
+
+<!-- ============ RESEARCH ============ -->
+<main id="research" class="page"><div class="wrap">
+ <h2 class="big">Research</h2>
+ <p class="lede">Preregistered, multi-lab and cross-national work on moral judgment, (dis)honest behaviour,
+  public attitudes to nuclear and autonomous weapons, and the credibility of psychological science.</p>
+
+ <div class="dash">
+  <div class="stat"><div class="n">__NPUBS__</div><div class="l">Publications</div></div>
+  <div class="stat"><div class="n">__NCITES__</div><div class="l">Citations</div><div class="s">Web of Science</div></div>
+  <div class="stat"><div class="n">__HINDEX__</div><div class="l">h-index</div><div class="s">Google Scholar</div></div>
+  <div class="stat"><div class="n">__NFIRST__</div><div class="l">First-author</div></div>
+ </div>
+
+ <div class="chart-grid">
+  <div class="chart-box">
+   <div class="chart-h">Publications &amp; citations by year</div>
+   <canvas id="chYear" class="cv" height="150"></canvas>
+  </div>
+  <div class="chart-box">
+   <div class="chart-h">Research areas</div>
+   <canvas id="chTopic" class="cv" height="150"></canvas>
+  </div>
+ </div>
+
+ <div class="chart-box" style="margin-bottom:16px">
+  <div class="chart-h">★ Most cited</div>
+  <div id="topCited"></div>
+ </div>
+
+ <div class="controls">
+  <input id="q" type="text" placeholder="Search titles, authors, journals…">
+  <div class="fg"><div class="fl">Topic</div><div class="chips" id="fTopic"></div></div>
+  <div class="fg"><div class="fl">Method</div><div class="chips" id="fMethod"></div></div>
+  <div class="fg"><div class="fl">Year</div><div class="chips" id="fYear"></div></div>
+  <div class="fg"><div class="fl">Co-author</div><div class="chips" id="fCo">__COCHIPS__</div></div>
+  <div class="tools">
+   <select id="fJournal"><option value="">All journals</option>__JOURNALS__</select>
+   <label><input type="checkbox" id="tOA"> Open access only</label>
+   <label><input type="checkbox" id="tGroup"> Group by year</label>
+   <label style="margin-left:auto">Sort
+    <select id="sort"><option value="new">Newest</option><option value="old">Oldest</option><option value="cited">Most cited</option></select>
+   </label>
+  </div>
+ </div>
+
+ <div class="rowflex">
+  <div class="cnt"><b id="n">0</b> publications <span id="clr" style="display:none">· <a href="#" onclick="clearAll();return false">clear filters</a></span></div>
+  <div style="color:var(--dim);font-size:11.6px">citation data: OpenAlex · updated __UPDATED__</div>
+ </div>
+ <div id="papers"></div>
+</div></main>
+
+<!-- ============ VITA ============ -->
+<main id="vita" class="page"><div class="wrap">
+ <h2 class="big">Vita</h2>
+ <p class="lede">Full CV available as a PDF.
+  <button class="btn" style="margin-left:6px" onclick="openCV()">Open CV</button></p>
+
+ <div class="two">
+  <div class="card pad"><h2 class="sec">Education</h2>__EDU__</div>
+  <div class="card pad"><h2 class="sec">Positions</h2>__POS__</div>
+ </div>
+ <div class="card pad" style="margin-top:16px"><h2 class="sec">Teaching</h2>
+  <div class="chips">__TEACH__</div>
+  <p style="color:var(--gray);font-size:12.8px;margin:11px 0 0">Supervision: 50+ bachelor and 25+ master students.</p>
+ </div>
+ <div class="two" style="margin-top:16px">
+  <div class="card pad"><h2 class="sec">Service</h2>__SERVICE__</div>
+  <div class="card pad"><h2 class="sec">Memberships</h2>__MEMBER__</div>
+ </div>
+</div></main>
+
+<div class="wrap"><div class="foot">
+ © __YEAR__ __NAME__ · Built as a single static page on GitHub Pages ·
+ citation data refreshed monthly from <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>
+</div></div>
+
+<button class="fab" onclick="openViz('network')">◵ Research explorer</button>
+
+<!-- ============ MODALS ============ -->
+<div class="ov" id="ovViz">
+ <div class="modal">
+  <div class="modal-h">
+   <h3 id="vizTitle">Co-author network</h3>
+   <button class="btn" id="tabNet" onclick="openViz('network')">Network</button>
+   <button class="btn" id="tabDna" onclick="openViz('dna')">Research DNA</button>
+   <button class="modal-x" onclick="closeOv('ovViz')">✕</button>
+  </div>
+  <div class="modal-b">
+   <div class="viz-wrap">
+    <div class="viz-canvas" style="height:460px"><canvas id="viz"></canvas></div>
+    <div class="viz-side">
+     <div class="grp" id="vizControls"></div>
+     <div class="grp"><h4>Statistics</h4><div id="vizStats"></div></div>
+     <div class="grp"><h4>Legend</h4><div id="vizLegend"></div></div>
+     <div class="hint" id="vizHint"></div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="ov" id="ovCV">
+ <div class="modal" style="max-width:900px">
+  <div class="modal-h">
+   <h3>Curriculum Vitae</h3>
+   <a class="btn" href="CV_Vranka.pdf" target="_blank" rel="noopener">Open in new tab</a>
+   <a class="btn pri" href="CV_Vranka.pdf" download>Download PDF</a>
+   <button class="modal-x" onclick="closeOv('ovCV')">✕</button>
+  </div>
+  <div class="modal-b" style="padding:0;background:#525659">
+   <iframe id="cvFrame" src="" style="width:100%;height:72vh;border:0" title="CV"></iframe>
+  </div>
+ </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const PUBS=__PUBS_JSON__, TOPICS=__TOPICS_JSON__, METHODS=__METHODS_JSON__, COLORS=__COLORS_JSON__;
+__JS__
+</script>
+</body>
+</html>
