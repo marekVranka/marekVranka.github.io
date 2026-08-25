@@ -7,6 +7,7 @@ function go(p){
  document.querySelectorAll('.page').forEach(s=>s.classList.toggle('on',s.id===p));
  document.querySelectorAll('nav.main button').forEach(b=>b.classList.toggle('on',b.dataset.p===p));
  window.scrollTo({top:0,behavior:'smooth'});
+ if(p==='research')setTimeout(()=>{try{drawCharts()}catch(e){}},50);
 }
 document.querySelectorAll('nav.main button').forEach(b=>b.onclick=()=>go(b.dataset.p));
 
@@ -173,14 +174,14 @@ function drawTopicChart(){
 }
 
 /* ---------------- co-author network ---------------- */
-let VIZ={mode:'network',nodes:[],links:[],drag:null,zoom:1,raf:null,hover:null,sizeBy:'papers',minPapers:1};
+let VIZ={mode:'network',nodes:[],links:[],drag:null,zoom:1,raf:null,hover:null,sizeBy:'papers',minPapers:2};
 function buildNetwork(){
  const cnt={},cites={},topics={};
  PUBS.forEach(p=>(p.co||[]).forEach(c=>{
   cnt[c]=(cnt[c]||0)+1;cites[c]=(cites[c]||0)+(p.c||0);
   (topics[c]=topics[c]||{});p.t.forEach(t=>topics[c][t]=(topics[c][t]||0)+1);
  }));
- const names=Object.keys(cnt).filter(n=>cnt[n]>=VIZ.minPapers);
+ const names=Object.keys(cnt).filter(n=>cnt[n]>=VIZ.minPapers).sort((x,y)=>cnt[y]-cnt[x]);
  const box=$('viz').parentElement, W=box.clientWidth, H=box.clientHeight;
  const nodes=[{id:'__me',label:'Vranka',n:PUBS.length,c:0,x:W/2,y:H/2,r:20,me:true,fx:W/2,fy:H/2}];
  names.forEach((nme,i)=>{
@@ -249,7 +250,7 @@ function drawNetwork(){
   // label
   if(n.me){x.fillStyle="#fff";x.font="600 11px Roboto,sans-serif";x.textAlign="center";x.textBaseline="middle";
    x.fillText("ME",n.x,n.y);}
-  else if(n.r>9||VIZ.hover===i){
+  else if(n.n>=2||VIZ.hover===i){
    x.fillStyle=NAVY;x.font=(VIZ.hover===i?"600 ":"")+"10.5px Roboto,sans-serif";
    x.textAlign="center";x.textBaseline="top";
    x.fillText(n.label,n.x,n.y+n.r+3);
@@ -268,7 +269,7 @@ function drawDNA(){
  const strands=Object.keys(TOPICS).filter(t=>PUBS.some(p=>p.t.includes(t)));
  const years=[...new Set(PUBS.map(p=>p.y))].sort((a,b)=>a-b);
  const y0=years[0], y1=years[years.length-1];
- const pad={l:120,r:26,t:22,b:28}, iw=W-pad.l-pad.r, ih=H-pad.t-pad.b;
+ const pad={l:152,r:30,t:22,b:28}, iw=W-pad.l-pad.r, ih=H-pad.t-pad.b;
  const lane=ih/strands.length;
  const px=y=>pad.l+iw*(y-y0)/Math.max(1,(y1-y0));
  // axis
@@ -287,7 +288,7 @@ function drawDNA(){
   x.globalAlpha=1;
   // label
   x.fillStyle=NAVY;x.font="600 10.5px Roboto,sans-serif";x.textAlign="right";x.textBaseline="middle";
-  const lab=TOPICS[t];x.fillText(lab.length>18?lab.slice(0,17)+'…':lab,pad.l-12,cy);
+  x.fillText(TOPICS[t],pad.l-12,cy);
   x.fillStyle=GRAY;x.font="9px Roboto,sans-serif";x.fillText(ps.length+" papers",pad.l-12,cy+11);
   // dots
   const maxc=Math.max(...PUBS.map(p=>p.c||0),1);
@@ -329,15 +330,17 @@ function openViz(mode){
    $('vizControls').innerHTML='<h4>Size nodes by</h4>'
     +'<select id="szBy"><option value="papers">Number of papers</option><option value="cites">Total citations</option><option value="equal">Equal size</option></select>'
     +'<h4 style="margin-top:11px">Minimum papers</h4>'
-    +'<select id="minP"><option value="1">All (1+)</option><option value="2">2+ papers</option><option value="3">3+ papers</option></select>';
+    +'<select id="minP"><option value="2">2+ papers (recommended)</option><option value="1">All co-authors</option><option value="3">3+ papers</option><option value="5">5+ papers</option></select>';
    $('szBy').value=VIZ.sizeBy;$('minP').value=VIZ.minPapers;
    $('szBy').onchange=e=>{VIZ.sizeBy=e.target.value;sizeNodes();};
    $('minP').onchange=e=>{VIZ.minPapers=+e.target.value;buildNetwork();};
    buildNetwork();
    const co=VIZ.nodes.length-1;
+   const tn=VIZ.nodes.slice(1).sort((x,y)=>y.n-x.n)[0];
+   const top=tn?(tn.label+' ('+tn.n+')'):'—';
    $('vizStats').innerHTML='<div class="vstat"><span>Co-authors</span><b>'+co+'</b></div>'
     +'<div class="vstat"><span>Papers</span><b>'+PUBS.length+'</b></div>'
-    +'<div class="vstat"><span>Most frequent</span><b>'+(VIZ.nodes[1]?VIZ.nodes[1].label:'—')+'</b></div>';
+    +'<div class="vstat"><span>Most frequent</span><b>'+top+'</b></div>';
    $('vizLegend').innerHTML=Object.keys(TOPICS).filter(t=>VIZ.nodes.some(n=>n.topic===t))
     .map(t=>'<div class="legend"><span class="dot" style="background:'+COLORS[t]+'"></span>'+TOPICS[t]+'</div>').join('');
    $('vizHint').textContent='Node size = number of joint papers. Colour = that collaborator’s main topic. Drag to rearrange, click to filter the publication list.';
@@ -393,4 +396,3 @@ function drawCharts(){try{drawYearChart();drawTopicChart();}catch(e){}}
 drawCharts();
 let rt;window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(()=>{
  drawCharts();if($('ovViz').classList.contains('on')&&VIZ.mode==='dna')drawDNA();},180);});
-document.querySelectorAll('nav.main button').forEach(b=>b.addEventListener('click',()=>{if(b.dataset.p==='research')setTimeout(drawCharts,60);}));
