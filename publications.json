@@ -106,7 +106,7 @@
   ],
   "m": [],
   "hl": 0,
-  "c": 6,
+  "c": 8,
   "ab": "In a rapidly evolving Generative Artificial Intelligence (GenAI) landscape, researchers, policymakers, and publishers have to continuously redefine responsible research practices. To ensure guidance of GenAI use in research, core principles that remain stable despite technological advancement are needed. This article defines a list of principles guiding the responsible use of GenAI in research, regardless of use case and GenAI technology employed. To define this framework, we conducted an anonymised Delphi consensus procedure comprising a panel of 16 international and multidisciplinary experts…",
   "oa": true,
   "doi": "10.1007/s43681-025-00768-8",
@@ -151,7 +151,7 @@
    "experiment"
   ],
   "hl": 0,
-  "c": 8,
+  "c": 10,
   "ab": "A recent wave of survey experiments has advanced scholarly understanding of public attitudes towards the use of nuclear weapons. In this article, we address the central question: can public opinion influence decision-makers’ views on nuclear weapon use? We bridge this critical gap in the literature with a survey experiment conducted on samples of UK parliamentarians and US and UK government employees in official policy roles. We varied public support for nuclear strikes in realistic scenarios to examine participants’ responsiveness to public preferences when considering nuclear first use, nuclear retaliation,…",
   "oa": true,
   "doi": "10.1017/eis.2025.10031",
@@ -267,7 +267,7 @@
    "survey"
   ],
   "hl": 0,
-  "c": 8,
+  "c": 9,
   "ab": "In this research article, we provide empirical evidence for the hypothesis that there are substantial elite-public gaps in attitudes toward the military use of nuclear and chemical weapons. We designed and preregistered an original survey investigating support for nuclear and chemical strikes in a hypothetical scenario and fielded it to representative samples of British citizens and parliamentarians. Our results provide strong empirical support for the elite-public gap hypothesis, with the parliamentarians expressing a significantly stronger aversion to nuclear and chemical use than the public respondents…",
   "oa": true,
   "doi": "10.1177/20531680241276795",
@@ -290,7 +290,7 @@
    "survey"
   ],
   "hl": 0,
-  "c": 12,
+  "c": 13,
   "ab": "In this paper, we provide an empirical test for the theoretical claim that ambiguous nuclear threats create a “commitment trap” for American leaders: when deterrence fails, supposedly they are more likely to order the use of nuclear weapons to avoid domestic audience costs for backing down. We designed an original survey experiment and fielded it to a sample of 1,000 U.S. citizens. We found no evidence of a commitment trap when ambiguous nuclear threats are made. Unlike explicit threats, ambiguous ones did not generate domestic disapproval when the leader backed down…",
   "oa": true,
   "doi": "10.1017/xps.2023.8",
@@ -313,7 +313,7 @@
    "crossnational"
   ],
   "hl": 1,
-  "c": 271,
+  "c": 273,
   "ab": "Effectively reducing climate change requires marked, global behavior change. However, it is unclear which strategies are most likely to motivate people to change their climate beliefs and behaviors. Here, we tested 11 expert-crowdsourced interventions on four climate mitigation outcomes: beliefs, policy support, information sharing intention, and an effortful tree-planting behavioral task. Across 59,440 participants from 63 countries, the interventions' effectiveness was small, largely limited to nonclimate skeptics, and differed across outcomes: Beliefs were strengthened mostly by decreasing psychological distance (by 2.3%), policy support…",
   "oa": true,
   "doi": "10.1126/sciadv.adj5778",
@@ -336,7 +336,7 @@
    "meta"
   ],
   "hl": 1,
-  "c": 118,
+  "c": 120,
   "ab": "proposed 19 policy recommendations ('claims') detailing how evidence from behavioural science could contribute to efforts to reduce impacts and end the COVID-19 pandemic. Here we assess 747 pandemic-related research articles that empirically investigated those claims. We report the scale of evidence and whether evidence supports them to indicate applicability for policymaking. Two independent teams, involving 72 reviewers, found evidence for 18 of 19 claims, with both teams finding evidence supporting 16 (89%) of those 18 claims. The strongest evidence supported claims that anticipated culture, polarization and…",
   "oa": true,
   "doi": "10.1038/s41586-023-06840-9",
@@ -494,7 +494,7 @@
   ],
   "m": [],
   "hl": 0,
-  "c": 16,
+  "c": 17,
   "ab": "",
   "oa": false,
   "doi": "10.1007/s00415-022-11211-x",
@@ -588,7 +588,7 @@
    "crossnational"
   ],
   "hl": 1,
-  "c": 46,
+  "c": 52,
   "ab": "Finding communication strategies that effectively motivate social distancing continues to be a global public health priority during the COVID-19 pandemic. This cross-country, preregistered experiment (n = 25,718 from 89 countries) tested hypotheses concerning generalizable positive and negative outcomes of social distancing messages that promoted personal agency and reflective choices (i.e., an autonomy-supportive message) or were restrictive and shaming (i.e., a controlling message) compared with no message at all. Results partially supported experimental hypotheses in that the controlling message increased…",
   "oa": true,
   "doi": "10.1073/pnas.2111091119",
@@ -726,7 +726,7 @@
    "multilab"
   ],
   "hl": 1,
-  "c": 155,
+  "c": 157,
   "ab": "",
   "oa": true,
   "doi": "10.1038/s41562-021-01173-x",
@@ -791,7 +791,7 @@
    "survey"
   ],
   "hl": 1,
-  "c": 121,
+  "c": 123,
   "ab": "Pervading global narratives suggest that political polarization is increasing, yet the accuracy of such group meta-perceptions has been drawn into question. A recent US study suggests that these beliefs are inaccurate and drive polarized beliefs about out-groups. However, it also found that informing people of inaccuracies reduces those negative beliefs. In this work, we explore whether these results generalize to other countries. To achieve this, we replicate two of the original experiments with 10,207 participants across 26 countries. We focus on local group divisions, which we refer to as fault lines. We find broad generalizability for…",
   "oa": true,
   "doi": "10.1038/s41562-021-01092-x",
@@ -817,7 +817,7 @@
   "hl": 0,
   "c": 2,
   "ab": "",
-  "oa": true,
+  "oa": false,
   "doi": "10.1016/j.socec.2021.101730",
   "co": [
    "Hudik",
@@ -842,7 +842,7 @@
    "survey"
   ],
   "hl": 0,
-  "c": 41,
+  "c": 42,
   "ab": "In this article, we present the results of two survey experiments on public support for nuclear, chemical, and conventional strikes. We examined how moral values of individuals interact with the approval of different kinds of strikes and with the effects of information about the ingroup and out-group fatalities. Our results show that while the public is more averse to the employment of chemical weapons than to the conduct of nuclear or conventional strikes, the overall relationship between strike approval and the individuals’ moral values does not differ across the three experimental treatments. In addition, we…",
   "oa": false,
   "doi": "10.1080/03050629.2020.1848825",
@@ -911,7 +911,7 @@
   "hl": 0,
   "c": 2,
   "ab": "",
-  "oa": false,
+  "oa": true,
   "doi": "10.1007/s12144-018-0012-7",
   "co": [
    "Bahník"
@@ -976,7 +976,7 @@
    "multilab"
   ],
   "hl": 0,
-  "c": 60,
+  "c": 61,
   "ab": "The attentional spatial-numerical association of response codes (Att-SNARC) effect (Fischer, Castel, Dodd, & Pratt, 2003)—the finding that participants are quicker to detect left-side targets when the targets are preceded by small numbers and quicker to detect right-side targets when they are preceded by large numbers—has been used as evidence for embodied number representations. We attempted to replicate Experiment 2 of Fischer et al. by collecting data from 1,105 participants at 17 labs…",
   "oa": true,
   "doi": "10.1177/2515245920903079",
@@ -1024,7 +1024,7 @@
    "crossnational"
   ],
   "hl": 1,
-  "c": 1043,
+  "c": 1046,
   "ab": "We conducted preregistered replications of 28 classic and contemporary published findings, with protocols that were peer reviewed in advance, to examine variation in effect magnitudes across samples and settings. Each protocol was administered to approximately half of 125 samples that comprised 15,305 participants from 36 countries and territories. Using the conventional criterion of statistical significance ( p < .05), we found that 15 (54%) of the replications provided evidence of a statistically significant effect in the same direction as the original finding. With a strict significance criterion ( p < .0001), 14 (50%) of the replications…",
   "oa": true,
   "doi": "10.1177/2515245918810225",
@@ -1068,7 +1068,7 @@
    "experiment"
   ],
   "hl": 0,
-  "c": 33,
+  "c": 32,
   "ab": "Laboratory studies allow studying the predictors of bribe-taking in a controlled setting. However, presently used laboratory tasks often lack any connection to norm violation or invite participants to role-play. A new experimental task for studying the decision to take a bribe was designed in this study to overcome these problems by embedding the opportunity for bribe-taking in an unrelated task that participants perform. Using this new experimental task, we found that refraining from harming a third party by taking a bribe was associated with lower offered bribes and higher scores of the participants on the…",
   "oa": true,
   "doi": "10.3389/fpsyg.2018.01511",
@@ -1087,7 +1087,7 @@
   ],
   "m": [],
   "hl": 0,
-  "c": 115,
+  "c": 117,
   "ab": "",
   "oa": false,
   "doi": "10.1016/j.paid.2017.05.046",
@@ -1108,7 +1108,7 @@
    "experiment"
   ],
   "hl": 1,
-  "c": 30,
+  "c": 31,
   "ab": "Processing fluency is used as a basis for various types of judgment. For example, previous research has shown that people judge food additives with names that are more difficult to pronounce (i.e., that are disfluent) to be more harmful. We explored the possibility that the association between disfluency and perceived harmfulness might be in the opposite direction for some categories of stimuli. Although we found some support for this hypothesis, an improved analysis and further studies indicated that the effect was strongly dependent on the stimuli used. We then used stimulus sampling and showed that the…",
   "oa": false,
   "doi": "10.1177/0956797616685770",
@@ -1235,7 +1235,7 @@
    "multilab"
   ],
   "hl": 0,
-  "c": 229,
+  "c": 230,
   "ab": "Trying to remember something now typically improves your ability to remember it later. However, after watching a video of a simulated bank robbery, participants who verbally described the robber were 25% worse at identifying the robber in a lineup than were participants who instead listed U.S. states and capitals-this has been termed the \"verbal overshadowing\" effect (Schooler & Engstler-Schooler, 1990). More recent studies suggested that this effect might be substantially smaller than first reported. Given uncertainty about the effect size, the influence of this finding in the memory literature, and its…",
   "oa": true,
   "doi": "10.1177/1745691614545653",
@@ -1259,7 +1259,7 @@
    "crossnational"
   ],
   "hl": 1,
-  "c": 1272,
+  "c": 1278,
   "ab": "Although replication is a central tenet of science, direct replications are rare in psychology. This research tested variation in the replicability of 13 classic and contemporary effects across 36 independent samples totaling 6,344 participants. In the aggregate, 10 effects replicated consistently. One effect – imagined contact reducing prejudice – showed weak support for replicability. And two effects – flag priming influencing conservatism and currency priming influencing system justification – did not replicate. We compared whether the conditions such as lab versus online or US versus international sample…",
   "oa": true,
   "doi": "10.1027/1864-9335/a000178",
